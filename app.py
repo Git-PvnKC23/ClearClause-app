@@ -9,7 +9,19 @@ import json
 from io import BytesIO
 from dotenv import load_dotenv
 import google.generativeai as genai
+import spacy
 from privacy_guard import redact_pii, get_redaction_summary
+
+@st.cache_resource
+def download_spacy_model():
+    try:
+        spacy.load("en_core_web_sm")
+    except OSError:
+        from spacy.cli import download
+        download("en_core_web_sm")
+
+# Call it immediately
+download_spacy_model()
 
 # Load environment variables from .env file
 load_dotenv()
