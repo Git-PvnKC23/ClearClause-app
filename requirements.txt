@@ -5,3 +5,7 @@ google-generativeai
 python-dotenv
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
 
+#adad
+git add .
+git commit -m "Force rebuild trigger"
+git push
